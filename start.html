@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url(Bigg-Boss-House-Entry-_1.jpg);
+            background-size:cover;
+        }
+
+        .container {
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            background: rgba(0,0,0,.5);
+            padding: 20px;
+            border: 2px solid palevioletred;
+            border-radius: 8px;
+            
+
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 60px;
+            color: palevioletred;
+          
+        }
+
+        .form-group {
+            margin-top: 20px;
+        }
+
+        .form-grouplabel {
+            display: block;
+            font-size:20px;
+            text-transform: uppercase;
+            color: white;
+            
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            display: block;
+            width: 50%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 2px solid palevioletred;
+            border-radius: 4px;
+            
+        }
+
+        .btn {
+            background-color: #007bff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            
+        }
+
+        .btn:hover {
+            background-color: #7897b8;
+        }
+        .abc{
+         color:red;
+        }
+        .divcontainer{
+            margin-top:40px;
+            text-align: center;
+            
+        }
+        .divcontainer button{
+            font-size: 30px;
+            padding: 10px 20px;
+            background-color: palevioletred;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Sign In</h2>
+        <form class="container" >
+            <div class="form-grouplabel">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-grouplabel">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="divcontainer">
+            <button><a href="voting.html">Login</button>
+        </form>
+    </div>
+</body>
+</html>
