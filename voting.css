@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing:border-box;
 }
+.abc{
+  text-align: center;
+  font-style: italic;
+}
 .h1 {
   color: whitesmoke;
   text-align: center;
@@ -53,12 +57,57 @@ h2 {
 .vote-button:hover {
   background-color: #e64a19;
 }
+.vote {
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+  border: 2px solid black;
+  background-color: rgb(220, 216, 226);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.vote {
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+  margin: 12px auto;
+  border: 2px solid black;
+  background-color: rgb(205 233 55);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.votes {
+  margin-left: 35px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
 .contestant {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
 }
-
+#showResult:hover {
+  color: rgb(222, 222, 17);
+}
+#showResult {
+  width: 50%;
+  height: 150px;
+  padding: 7px;
+  align-items: center;
+  margin: auto;
+  border: 2px solid black;
+  background-color: #e6ed0ad1;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 @media (max-width: 768px) {
   .contestant {
     width: 75%;

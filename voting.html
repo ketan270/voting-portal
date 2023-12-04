@@ -4,37 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="voting.css">
+    <link rel="stylesheet" href="voting.js">
     <title>Bigg Boss Voting</title>
 </head>
 <body>
-    <header class="abcd"> <h1>Bigg Boss Voting</h1>
-    </header>
+<h1 class="abc">Bigg Boss Voting</h1>
     <main>
-        <div class="contestant">
+        <div class="contestant" id="contestant">
             <img src="bbott-abhishek-malhan-3x4-1687053861003.jpg" alt="Contestant 1">
             <h2>ABHISHEK MALHAN</h2>
-            <button class="vote-button">Vote</button>
+            <button id="bjpVote" class="vote">Vote</button>
+            <p id="bjpResult" class="votes">Votes: </p>
         </div>
-        <div class="contestant">
+        <div class="contestant" id="contestant">
             <img src="bbott-elvishyadav-3x4-1689333795941.jpg" alt="Contestant 2">
             <h2>ELVISH YADAV</h2>
-            <button class="vote-button">Vote</button>
+            <button id="congressVote" class="vote">Vote</button>
+            <p id="congressResult" class="votes">Votes: </p>
         </div>
-        <div class="contestant">
+        <div class="contestant" id="contestant">
             <img src="bbott-manisha-rani-3x4-1687053806636.jpg" alt="Contestant 3">
             <h2>MANISHA RANI</h2>
-            <button class="vote-button">Vote</button>
+            <button id="aapVote" class="vote">Vote</button>
+            <p id="aapResult" class="votes">Votes: </p>
         </div>
-        <div class="contestant">
+        <div class="contestant" id="contestant">
             <img src="bbott-avinash-sachdev-3x4-1687053766316.jpg" alt="Contestant 4">
             <h2>AVINASH SACHDEVA</h2>
-            <button class="vote-button">Vote</button>
+            <button id="bspVote" class="vote">Vote</button>
+            <p id="bspResult" class="votes">Votes: </p>
         </div>
-        <div class="contestant">
-            <img src="bbott-jiya-shankar-3x4-1687053606407.jpg" alt="Contestant 4">
-            <h2>JIYA SHANKAR</h2>
-            <button class="vote-button">Vote</button>
+        <button id="showResult">BIGG BOSS VOTING PAGE</button>
         </div>
     </main>
+    <script>
+        let bjp_votes = 0;
+        let congress_votes = 0;
+        let aap_votes = 0;
+        let bsp_votes = 0;
+        let bjp_result = document.getElementById("bjpResult");
+        let congress_result = document.getElementById("congressResult");
+        let aap_result = document.getElementById("aapResult");
+        let bsp_result = document.getElementById("bspResult");
+
+        document.getElementById("bjpVote").addEventListener("click", () => {
+            bjp_votes++;
+            bjp_result.innerHTML = "Votes: " + bjp_votes;
+        })
+        document.getElementById("congressVote").addEventListener("click", () => {
+            congress_votes++;
+            congress_result.innerHTML = "Votes: " + congress_votes;
+        })
+        document.getElementById("aapVote").addEventListener("click", () => {
+            aap_votes++;
+            aap_result.innerHTML = "Votes: " + aap_votes;
+        })
+        document.getElementById("bspVote").addEventListener("click", () => {
+            bsp_votes++;
+            bsp_result.innerHTML = "Votes: " + bsp_votes;
+        })
+
+        document.getElementById("showResult").addEventListener("click", () => {
+            if (bjp_votes > congress_votes && bjp_votes > aap_votes && bjp_votes > bsp_votes) {
+                bjp_result.innerHTML = " ABHISHEK WON";
+                congress_result.innerHTML = "";
+                aap_result.innerHTML = "";
+                bsp_result.innerHTML = "";
+            } else if (congress_votes > aap_votes && congress_votes > bsp_votes && congress_votes > bjp_votes) {
+                bjp_result.innerHTML = " ";
+                congress_result.innerHTML = " ELVISH WON";
+                aap_result.innerHTML = " ";
+                bsp_result.innerHTML = " ";
+            } else if (aap_votes > bsp_votes && aap_votes > congress_votes && aap_votes > bjp_votes) {
+                bjp_result.innerHTML = "";
+                congress_result.innerHTML = "";
+                aap_result.innerHTML = " MANISHA WON";
+                bsp_result.innerHTML = "";
+            } else if (bsp_votes > congress_votes && bsp_votes > aap_votes && bsp_votes > bjp_votes) {
+                bjp_result.innerHTML = "";
+                congress_result.innerHTML = "";
+                aap_result.innerHTML = "";
+                bsp_result.innerHTML = " AVINASH WON";
+            }
+            else {
+                bjp_result.innerHTML = " NO Result";
+                congress_result.innerHTML = " NO Result";
+                aap_result.innerHTML = " NO Result";
+                bsp_result.innerHTML = " NO Result";
+            }
+            bjp_votes = 0;
+            congress_votes = 0;
+            aap_votes = 0;
+            bsp_votes = 0;
+        })
+    </script>
 </body>
 </html>
